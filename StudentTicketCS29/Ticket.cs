@@ -50,16 +50,20 @@ namespace StudentTicketCS29 {
             int miles5 = (ticketSpeed - speedLimit) / 5;
             price += miles5 * 87.5;
 
-            if (milesdifference > 20) price += 100;
+            
 
             if(grade == Classes.Freshman) {
                 if (milesdifference < 20)
                     price -= 50;
+                else price += 100;
             }
             if(grade == Classes.Senior) {
                 if (milesdifference > 20)
-                    price += 100;
+                    price += 200;
                 else price += 50;
+            }
+            if (grade == Classes.Junior || grade == Classes.Sophomore) {
+                if (milesdifference >= 20) price += 100;
             }
 
 
